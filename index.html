@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Selfie App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>Voice Activated Selfie App</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Selfie App</h1>
-        <p>Allow permissions for camera in popup</p>
-        <h2>Say, "Take my selfie"</h2>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>📸 Voice Activated Selfie App</h1>
+    </header>
 
-        <div class="input-field">
-            <label for="voice-input">Input</label>
-            <input type="text" name="voice-input" id="voice-input" placeholder="Say something...">
-        </div>
-        <div class="button-container">
-            <button id="start-button">Start</button>
-            <!-- <button id="stop-button">Stop</button> -->
-        </div>
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Alert Message -->
+      <div class="alert">
+        <p style="color: yellow;">
+          ⚠️ After clicking the "Start Recording" button, please allow microphone and camera access
+          <br />
+          <span style="color: rgb(218, 218, 34);">Look in the top-left corner of the browser window</span>
+        </p>
+      </div>
 
-        <div class="output-field">
-            <label for="output">Output</label>
-            <!-- <textarea name="output" id="output" rows="4" readonly></textarea> -->
+      <!-- Input Section -->
+      <div class="input-field">
+        <p><strong>Transcript:</strong> <span id="speechText">(Waiting)...</span></p>
+        <button onclick="startRecognition()">🎙️ Start Recording</button>
+      </div>
 
+      <!-- Camera Preview -->
+      <div class="preview">
+        <video id="camera" autoplay playsinline></video>
+      </div>
 
-    </div>
+      <!-- Captured Photos -->
+      <div class="saved">
+        <!-- Captured selfies will appear here -->
+      </div>
 
-    <script src="index.js"></script>
+    </main>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
